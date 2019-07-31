@@ -13,6 +13,9 @@ build:
   number: 1
   script: "{{ PYTHON }} -m pip install . -vvv"
   noarch: python
+  entry_points:
+    - paintera-conversion-helper=paintera_co:paintera_conversion_helper:launch_pch
+    - extract-to-scalar=paintera_conversion_helper:launch_extract_to_scalar
 
 requirements:
   host:
@@ -21,9 +24,6 @@ requirements:
   run:
     - python >=3
     - jgo >=0.4.0
-  entry_points:
-    - paintera-conversion-helper=paintera_co:paintera_conversion_helper:launch_pch
-    - extract-to-scalar=paintera_conversion_helper:launch_extract_to_scalar
 
 test:
   imports:

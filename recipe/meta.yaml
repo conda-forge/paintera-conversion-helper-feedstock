@@ -10,11 +10,11 @@ source:
   sha256: 34707550ec936901561f284d03545bd30543c5f18dd4ba029943282ab92581cc
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vvv"
   noarch: python
   entry_points:
-    - paintera-conversion-helper=paintera_co:paintera_conversion_helper:launch_pch
+    - paintera-conversion-helper=paintera_conversion_helper:launch_pch
     - extract-to-scalar=paintera_conversion_helper:launch_extract_to_scalar
 
 requirements:

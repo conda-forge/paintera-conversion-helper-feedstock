@@ -1,5 +1,5 @@
 {% set name = "paintera-conversion-helper" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 34707550ec936901561f284d03545bd30543c5f18dd4ba029943282ab92581cc
+  sha256: 2d0eb724f29c105670eb43f884d3353ee803c52d1ae5622087945acb23308a5e
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vvv"
   noarch: python
   entry_points:

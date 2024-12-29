@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('-', '_') }}-{{ version }}.tar.gz
   sha256: c06a43e4fa02e86690e66f3c2431781436931c66695278355e121af4af4bcd80
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vvv
   noarch: python
   entry_points:
@@ -20,13 +20,15 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - jgo >=0.4.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - paintera_conversion_helper
 
